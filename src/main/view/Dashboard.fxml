@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.SVGPath?>
+
+<BorderPane prefHeight="884.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.view.DashboardController">
+   <center>
+      <SplitPane dividerPositions="0.32064128256513025" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.7863636363636364" layoutX="118.0" layoutY="444.0" orientation="VERTICAL" prefHeight="718.0" prefWidth="378.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <TreeView fx:id="treeView" layoutX="24.0" layoutY="49.0" onMouseClicked="#listenForClicks" prefHeight="270.0" prefWidth="268.0" />
+                              <Button layoutX="23.0" layoutY="453.0" mnemonicParsing="false" onAction="#changeCords" prefHeight="30.0" prefWidth="128.0" text="Change Location" />
+                              <Button layoutX="164.0" layoutY="453.0" mnemonicParsing="false" onAction="#changePrice" prefHeight="30.0" prefWidth="128.0" text="Change Price" />
+                              <Button layoutX="23.0" layoutY="489.0" mnemonicParsing="false" onAction="#changeDimensions" prefHeight="30.0" prefWidth="128.0" text="Change Dimensions" />
+                              <Button layoutX="164.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleDeleteItem" prefHeight="30.0" prefWidth="128.0" text="Delete" />
+                              <Label layoutX="75.0" layoutY="536.0" text="Commands on Item Containers" underline="true" />
+                              <Button layoutX="165.0" layoutY="563.0" mnemonicParsing="false" onAction="#rename" prefHeight="30.0" prefWidth="128.0" text="Rename" />
+                              <Button layoutX="24.0" layoutY="563.0" mnemonicParsing="false" onAction="#handle_Add_item_Container" prefHeight="30.0" prefWidth="128.0" text="Add Item-Container" />
+                              <Button layoutX="165.0" layoutY="599.0" mnemonicParsing="false" onAction="#changePrice" prefHeight="30.0" prefWidth="128.0" text="Change Price" />
+                              <Button layoutX="24.0" layoutY="599.0" mnemonicParsing="false" onAction="#changeCords" prefHeight="30.0" prefWidth="128.0" text="Change Location" />
+                              <Button layoutX="165.0" layoutY="635.0" mnemonicParsing="false" onAction="#handleDeleteItemContainer" prefHeight="30.0" prefWidth="128.0" text="Delete" />
+                              <Button layoutX="24.0" layoutY="635.0" mnemonicParsing="false" onAction="#changeDimensions" prefHeight="30.0" prefWidth="128.0" text="Change Dimensions" />
+                              <Label layoutX="24.0" layoutY="14.0" prefHeight="17.0" prefWidth="362.0" text="1. Items / Item Containers" />
+                              <Label layoutX="103.0" layoutY="391.0" text="Commands on Items" underline="true" />
+                              <Button layoutX="23.0" layoutY="417.0" mnemonicParsing="false" onAction="#handleAddItem" prefHeight="30.0" prefWidth="128.0" text="Add Item" />
+                              <Button layoutX="164.0" layoutY="417.0" mnemonicParsing="false" onAction="#rename" prefHeight="30.0" prefWidth="128.0" text="Rename" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8ebee" height="56.0" layoutX="24.0" layoutY="319.0" stroke="#ddd4d4" strokeType="INSIDE" width="268.0" />
+                              <Label layoutX="36.0" layoutY="326.0" prefHeight="17.0" prefWidth="133.0" text="Purchase Price: " />
+                              <Label layoutX="36.0" layoutY="351.0" text="Current Market Value: " />
+                              <Label fx:id="Purchase_Price" layoutX="196.0" layoutY="326.0" text="0" />
+                              <Label fx:id="Market_Value" layoutX="196.0" layoutY="351.0" text="0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Label layoutX="22.0" layoutY="14.0" prefHeight="17.0" prefWidth="362.0" text="3. Drone Actions" />
+                              <Button layoutX="23.0" layoutY="123.0" mnemonicParsing="false" onAction="#Drone_Simulated" prefHeight="30.0" prefWidth="270.0" text="Launch Simulator" />
+                              <Button layoutX="23.0" layoutY="84.0" mnemonicParsing="false" onAction="#Drone_Actual" prefHeight="30.0" prefWidth="270.0" text="Launch Drone" />
+                              <HBox layoutX="25.0" layoutY="46.0" prefHeight="22.0" prefWidth="267.0">
+                                 <children>
+                                    <RadioButton fx:id="Visit" mnemonicParsing="false" prefHeight="17.0" prefWidth="132.0" selected="true" text="Visit Item">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="Drone_Action" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="Scan" mnemonicParsing="false" prefHeight="17.0" prefWidth="136.0" text="Scan Farm" toggleGroup="$Drone_Action" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label layoutX="38.0" layoutY="14.0" prefHeight="17.0" prefWidth="880.0" text="2. Visualization" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f3f4f5" height="800.0" layoutX="38.0" layoutY="49.0" stroke="BLACK" strokeType="INSIDE" width="600.0" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="49.0" />
+                  <AnchorPane fx:id="visualizationPane" layoutX="38.0" layoutY="49.0" prefHeight="800.0" prefWidth="600.0" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="49.0">
+                     <children>
+                        <SVGPath fx:id="sim" content="M1330 8185 c-203 -37 -440 -138 -599 -255 -264 -195 -475 -482 -571 -778 -47 -148 -55 -208 -55 -447 0 -247 9 -309 71 -487 83 -239 231 -455 434 -634 187 -165 387 -274 615 -334 154 -41 569 -44 715 -6 36 10 132 43 214 73 l149 56 24 -29 c68 -81 179 -232 236 -320 107 -163 100 -107 100 -814 1 -541 -1 -622 -16 -670 -24 -82 -299 -480 -343 -497 -8 -3 -68 15 -133 40 -257 100 -262 101 -556 102 -215 0 -274 -3 -343 -18 -325 -72 -583 -233 -840 -527 -235 -269 -347 -618 -329 -1030 10 -221 50 -377 149 -574 195 -388 565 -686 988 -795 109 -29 403 -40 559 -22 346 41 617 182 886 463 208 217 331 452 382 732 22 116 24 467 5 571 -15 78 -45 170 -104 319 -30 76 -36 101 -27 112 19 24 239 188 336 252 169 110 134 106 823 106 593 0 595 0 663 -23 117 -39 497 -308 497 -351 0 -11 -14 -54 -31 -97 -101 -250 -139 -480 -119 -715 33 -384 174 -683 452 -955 170 -167 373 -292 584 -361 164 -54 190 -57 464 -57 287 0 336 8 534 86 190 75 336 170 490 319 189 183 313 372 395 602 56 161 66 229 66 478 0 248 -10 317 -66 478 -80 227 -184 388 -368 572 -240 240 -448 355 -761 421 -152 32 -440 33 -586 1 -91 -20 -231 -65 -368 -118 l-48 -19 -40 45 c-64 71 -243 327 -277 395 -19 39 -37 98 -47 156 -14 83 -15 118 -4 304 9 149 10 270 4 415 -20 453 -10 510 118 700 56 82 171 235 217 289 l30 33 148 -55 c243 -91 280 -98 539 -98 306 -1 453 30 679 142 147 72 247 146 388 286 142 141 224 251 297 398 113 228 144 371 144 665 0 296 -35 450 -157 684 -99 190 -281 398 -472 541 -73 54 -263 153 -363 189 -155 55 -257 69 -497 69 -188 0 -235 -3 -322 -21 -316 -68 -578 -227 -817 -497 -174 -197 -286 -425 -333 -679 -13 -69 -17 -145 -17 -316 0 -209 2 -232 26 -320 14 -52 49 -153 77 -225 48 -123 50 -130 33 -148 -26 -29 -282 -219 -365 -271 -126 -79 -112 -77 -819 -74 l-623 3 -57 28 c-90 44 -429 289 -452 326 -3 4 18 66 46 137 93 237 101 284 102 554 1 261 -9 339 -66 498 -82 233 -214 432 -408 615 -218 206 -504 346 -780 383 -132 17 -401 17 -500 -1z m480 -249 c369 -56 727 -323 904 -674 135 -267 165 -607 80 -901 -31 -105 -73 -201 -88 -201 -15 0 -6 -6 -346 241 -157 114 -307 227 -334 251 -43 39 -48 49 -62 117 -9 41 -13 83 -10 95 3 12 46 66 97 121 161 176 263 316 294 404 13 39 13 43 -6 62 -23 23 -38 21 -119 -22 -77 -41 -192 -129 -327 -250 -63 -57 -124 -108 -134 -113 -12 -6 -39 -4 -73 4 -73 17 -170 9 -230 -20 -69 -33 -157 -119 -195 -190 -39 -74 -49 -146 -31 -239 8 -41 9 -74 4 -83 -5 -9 -56 -67 -113 -131 -134 -149 -213 -254 -257 -343 -30 -60 -34 -75 -25 -93 17 -30 53 -27 130 14 87 46 193 127 334 255 64 57 124 107 134 111 10 3 40 0 68 -7 27 -8 60 -14 72 -14 29 0 68 -41 172 -179 92 -122 355 -487 386 -534 l17 -27 -65 -30 c-153 -69 -365 -106 -557 -97 -420 21 -772 231 -1004 600 -186 297 -231 702 -114 1042 143 418 497 733 928 825 107 23 336 26 470 6z m5010 0 c297 -45 591 -227 786 -486 68 -90 150 -244 183 -345 82 -249 82 -545 1 -787 -148 -441 -513 -756 -979 -842 -214 -40 -499 -6 -699 85 -61 27 -63 29 -50 52 18 33 384 535 453 622 31 38 66 75 78 81 33 18 151 41 171 34 9 -3 69 -53 133 -110 192 -175 362 -290 427 -290 100 0 3 182 -245 457 -57 64 -108 122 -113 131 -5 9 -4 42 4 83 7 37 10 92 7 122 -17 166 -201 337 -363 337 -35 0 -84 -5 -108 -12 -29 -8 -51 -8 -64 -2 -11 5 -72 56 -135 113 -135 121 -250 209 -327 250 -81 43 -96 45 -119 22 -21 -21 -21 -21 -2 -70 34 -90 113 -196 329 -441 34 -39 62 -78 62 -88 0 -50 -31 -157 -52 -179 -49 -54 -679 -513 -703 -513 -7 0 -24 26 -38 58 -109 248 -130 532 -61 799 56 218 165 407 328 569 181 181 385 292 626 344 107 23 336 26 470 6z m-5034 -5001 c161 -28 362 -101 356 -130 -6 -27 -481 -674 -518 -706 -28 -23 -171 -51 -196 -38 -11 6 -56 45 -101 86 -120 111 -267 226 -342 268 -77 43 -121 49 -141 19 -30 -44 80 -217 285 -444 l113 -125 -8 -50 c-17 -103 -10 -196 17 -255 36 -76 106 -150 181 -190 51 -28 76 -34 140 -38 46 -3 96 1 122 8 57 16 62 12 200 -113 140 -127 251 -210 342 -255 74 -36 95 -37 113 -4 8 15 3 33 -19 81 -50 104 -129 209 -294 390 -50 55 -86 103 -86 115 0 12 7 53 14 91 13 62 20 75 58 109 35 31 623 464 666 490 21 13 40 -11 71 -92 146 -380 102 -794 -122 -1134 -74 -113 -233 -276 -337 -345 -146 -97 -304 -164 -475 -199 -107 -22 -345 -25 -444 -5 -274 54 -497 175 -687 373 -229 239 -344 524 -344 856 0 267 63 480 208 697 187 281 494 479 837 539 108 19 283 19 391 1z m5044 -6 c132 -20 328 -98 455 -182 283 -186 477 -473 545 -806 28 -138 28 -345 -1 -484 -86 -426 -396 -783 -807 -931 -211 -76 -478 -93 -688 -44 -240 56 -426 158 -603 331 -187 183 -312 419 -357 677 -24 142 -15 380 20 514 31 116 83 246 99 246 20 0 672 -475 710 -518 17 -19 47 -132 47 -178 0 -12 -36 -60 -86 -115 -162 -176 -280 -336 -309 -418 -11 -34 -11 -42 1 -60 20 -28 33 -27 112 13 89 45 200 129 344 258 65 59 127 109 138 113 11 4 37 1 57 -6 20 -6 68 -12 106 -11 57 0 80 6 134 32 79 39 158 117 198 196 26 50 30 70 30 134 -1 41 -5 98 -9 125 l-8 50 113 125 c141 156 222 265 265 354 34 71 34 99 -1 112 -52 20 -243 -109 -468 -314 -48 -45 -96 -83 -106 -87 -10 -3 -45 1 -77 10 -32 8 -66 15 -75 15 -25 0 -81 70 -332 415 -156 213 -223 313 -216 321 30 37 259 110 384 124 89 9 286 4 385 -11z" layoutX="-3900.0" layoutY="-4031.0" scaleX="0.008" scaleY="0.008" />
+                     </children></AnchorPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="F:/School_Projects/Computer Science/Software Engineering/Farming Drone App (Team 2)/design-and-implementation-part-2/design-and-implementation-part-2/src/dependencies/drone-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="F:/School_Projects/Computer Science/Software Engineering/Farming Drone App (Team 2)/design-and-implementation-part-2/design-and-implementation-part-2/src/dependencies/drone-0.0.1-SNAPSHOT-jar-with-dependencies.jar"/>
+	<classpathentry kind="lib" path="F:/School_Projects/Computer Science/Software Engineering/Farming Drone App (Team 2)/design-and-implementation-part-2/design-and-implementation-part-2/src/dependencies/javacv-1.5.6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
