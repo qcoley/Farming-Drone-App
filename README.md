@@ -16,7 +16,6 @@ Within the app one can add new items and item containers such as livestock or cr
 ![scan](https://user-images.githubusercontent.com/49097168/161132575-be5010a3-4e2c-4f3a-a2b6-58c4d8b122ea.png)
 
 # Installation and launch
-This UI was created by Team 2 
 To run this UI simply download the application from GIT and from run mainapp.java
 
 # Known limitations
